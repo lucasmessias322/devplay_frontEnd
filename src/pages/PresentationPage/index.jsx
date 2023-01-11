@@ -19,34 +19,6 @@ export default function PresentationPage() {
             </p>
           </C.SectionOneTexts>
         </Header>
-
-        {/* <C.Header>
-          <div className="logoContain">
-            <h2>
-              <span>{"<"}</span>Dev<span>Play</span>
-              <span>{" />"}</span>
-            </h2>
-          </div>
-          <div className="loginSigninbtnsContainer">
-            <Link to="/loginregister/login">
-              <span>Login</span>
-            </Link>
-            <Link to="/loginregister/register">
-              <span className="register">Register</span>
-            </Link>
-          </div>
-        </C.Header> */}
-
-        {/* <C.SectionOneTexts>
-          <h1>
-            Devore novas <br />
-            <span>tecnologias</span>
-          </h1>
-          <p>
-            Aprenda com oque a de melhor gratuito na <br /> Internet de forma
-            organizada
-          </p>
-        </C.SectionOneTexts> */}
       </C.SectionOne>
       <C.SectionTwo>
         <img src="/assets/1615989475_125046_url.gif" alt="" srcset="" />

@@ -67,7 +67,6 @@ export const Header = styled.header`
 
 export const SectionOne = styled.section`
   background: linear-gradient(98.95deg, #302451 -0.83%, #4b3b76 97.71%);
-  border-bottom: 10px solid #956fff;
 `;
 export const SectionOneTexts = styled.div`
   color: white;

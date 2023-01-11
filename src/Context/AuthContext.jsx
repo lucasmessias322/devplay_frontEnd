@@ -7,7 +7,7 @@ const initialState = {
   currentUserData: Object,
   setCurrentUserData: Function,
   setToken: Function,
-  logout: Function,
+  logout: () => {},
 };
 
 export const AuthContext = createContext(initialState);

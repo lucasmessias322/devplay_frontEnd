@@ -36,7 +36,11 @@ export const Header = styled.header`
   }
 
   div.loginSigninbtnsContainer {
+    .outBtn {
+      cursor: pointer;
+    }
     span {
+      cursor: pointer;
       color: white;
       padding: 10px;
     }

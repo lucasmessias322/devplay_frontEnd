@@ -15,8 +15,15 @@ export async function postLogin(data) {
 }
 
 export async function postRegister(data) {
-  return api
+  return await api
     .post("/auth/register", data)
+    .then((response) => response)
+    .catch((error) => console.log(error));
+}
+
+export async function getCourses() {
+  return await api
+    .get("/api/courses")
     .then((response) => response)
     .catch((error) => console.log(error));
 }

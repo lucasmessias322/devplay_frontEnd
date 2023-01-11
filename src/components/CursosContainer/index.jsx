@@ -43,23 +43,39 @@ export default function CursosSliderContainer({
       },
     ],
   };
+
   return (
     <Container>
       <h2>
         {title} <span>{coloredTitle}:</span>
       </h2>
+
       <SliderContain>
-        <Slider {...settings}>
-          {cursosArray.map((item, i) => (
-            <CursoItem key={i}>
-              <Link to="/videopage">
-                <img src="/assets/exempleImage.jpg" alt="" />
-                <h4>Nome do curso{i}</h4>
-              </Link>
-            </CursoItem>
-          ))}
-        </Slider>
+        {cursosArray.map((item, i) => (
+          <CursoItem key={i}>
+            <Link to="/videopage">
+              <img src="/assets/exempleImage.jpg" alt="" />
+              <h4>yyy</h4>
+            </Link>
+          </CursoItem>
+        ))}
       </SliderContain>
+      {/* <SliderContain>
+        {cursosArray.length <= 1 ? (
+          <Slider {...settings}>
+            {cursosArray.map((item, i) => (
+              <CursoItem key={i}>
+                <Link to="/videopage">
+                  <img src="/assets/exempleImage.jpg" alt="" />
+                  <h4>yyy</h4>
+                </Link>
+              </CursoItem>
+            ))}
+          </Slider>
+        ) : (
+          "ola"
+        )} */}
+      {/* </SliderContain> */}
     </Container>
   );
 }
@@ -112,6 +128,12 @@ const CursoItem = styled.div`
     }
 
     h4 {
+      text-align: center;
+      margin: 0 auto;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 150px; /* some width */
       font-size: 16px;
       color: white;
       padding: 20px 5px;
@@ -121,4 +143,6 @@ const CursoItem = styled.div`
 
 const SliderContain = styled.div`
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
 `;

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import * as C from "./style";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
+import { FaSignOutAlt } from "react-icons/fa";
 
 export default function Header({
   playerPage = false,
@@ -9,7 +10,7 @@ export default function Header({
   LoginSigninBtn,
   children,
 }) {
-  const { currentUserData } = useContext(AuthContext);
+  const { currentUserData, logout } = useContext(AuthContext);
 
   return (
     <C.Container playerPage={playerPage} borderBottom={borderBottom}>
@@ -22,16 +23,20 @@ export default function Header({
           {playerPage && <span className="nomeDoCurso">| Nome Do curso</span>}
         </div>
 
-        {!currentUserData && (
-          <div className="loginSigninbtnsContainer">
-            <Link to="/loginregister/login">
-              <span>Login</span>
-            </Link>
-            <Link to="/loginregister/register">
-              <span className="register">Register</span>
-            </Link>
-          </div>
-        )}
+        <div className="loginSigninbtnsContainer">
+          {currentUserData ? (
+            <FaSignOutAlt onClick={logout} size={25} className="outBtn" />
+          ) : (
+            <>
+              <Link to="/loginregister/login">
+                <span>Login</span>
+              </Link>
+              <Link to="/loginregister/register">
+                <span className="register">Register</span>
+              </Link>
+            </>
+          )}
+        </div>
       </C.Header>
       {children}
     </C.Container>
