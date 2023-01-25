@@ -82,6 +82,12 @@ export const LessonItem = styled.li`
   padding: 20px 10px;
   list-style: none;
   border-bottom: 0.1px solid rgba(255, 255, 255, 0.19);
+  background-color: ${(props) =>
+    props.isCurrentClass ? "#956fff" : "#302451"};
+
+  &:hover {
+    background-color: #956fff;
+  }
 
   input {
     background-color: red;

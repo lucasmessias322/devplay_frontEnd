@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { BaseUrl } from "../../services/Api.js";
 
 export default function CursosSliderContainer({
   title,
@@ -51,31 +52,15 @@ export default function CursosSliderContainer({
       </h2>
 
       <SliderContain>
-        {cursosArray.map((item, i) => (
+        {cursosArray?.map((item, i) => (
           <CursoItem key={i}>
-            <Link to="/videopage">
-              <img src="/assets/exempleImage.jpg" alt="" />
-              <h4>yyy</h4>
+            <Link to={`/videopage/?datacurso=${JSON.stringify(item)}`}>
+              <img src={`${BaseUrl}/ftp/images/${item.image}`} />
+              <h4>{item.title}</h4>
             </Link>
           </CursoItem>
         ))}
       </SliderContain>
-      {/* <SliderContain>
-        {cursosArray.length <= 1 ? (
-          <Slider {...settings}>
-            {cursosArray.map((item, i) => (
-              <CursoItem key={i}>
-                <Link to="/videopage">
-                  <img src="/assets/exempleImage.jpg" alt="" />
-                  <h4>yyy</h4>
-                </Link>
-              </CursoItem>
-            ))}
-          </Slider>
-        ) : (
-          "ola"
-        )} */}
-      {/* </SliderContain> */}
     </Container>
   );
 }
@@ -112,6 +97,10 @@ const Container = styled.div`
 const CursoItem = styled.div`
   width: 200px;
   padding: 5px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   a {
     border-bottom-left-radius: 10px;

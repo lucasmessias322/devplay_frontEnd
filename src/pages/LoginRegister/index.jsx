@@ -14,12 +14,13 @@ export default function LoginRegister() {
     if (params.login === "login") {
       setLogin(true);
     } else if (params.login === "register") {
-      setLogin(false);
+      setLogin (false);
     }
   }, []);
 
   return (
     <C.Container>
+      <ToastContainer />
       <C.Header>
         <h2>
           <span>{"<"}</span>Dev<span>Play</span>

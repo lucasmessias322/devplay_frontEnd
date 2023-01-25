@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import * as C from "./style";
 import Header from "../../components/Header";
 import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import CursosSliderContainer from "../../components/CursosContainer";
 import { getCourses } from "../../services/Api";
 
@@ -13,8 +12,10 @@ export default function DashBoard() {
     getCourses().then((res) => {
       setCourses(res.data);
     });
+
+    console.log(Courses);
   }, []);
-  console.log(Courses);
+
   return (
     <C.Container>
       <Header LoginSigninBtn>

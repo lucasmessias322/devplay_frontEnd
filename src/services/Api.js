@@ -2,7 +2,7 @@ import axios from "axios";
 
 const localhost = "http://localhost:8081";
 
-const BaseUrl = localhost;
+export const BaseUrl = localhost;
 const api = axios.create({
   baseURL: BaseUrl,
 });

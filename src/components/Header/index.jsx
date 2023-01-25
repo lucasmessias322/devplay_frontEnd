@@ -16,10 +16,13 @@ export default function Header({
     <C.Container playerPage={playerPage} borderBottom={borderBottom}>
       <C.Header playerPage={playerPage}>
         <div className="logoContain">
-          <h2>
-            <span>{"<"}</span>Dev<span>Play</span>
-            <span>{" />"}</span>
-          </h2>
+          <Link to="/dashboard">
+            <h2>
+              <span>{"<"}</span>Dev<span>Play</span>
+              <span>{" />"}</span>
+            </h2>
+          </Link>
+
           {playerPage && <span className="nomeDoCurso">| Nome Do curso</span>}
         </div>
 
