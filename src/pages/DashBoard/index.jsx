@@ -3,19 +3,20 @@ import * as C from "./style";
 import Header from "../../components/Header";
 import { FaSearch } from "react-icons/fa";
 import CursosSliderContainer from "../../components/CursosContainer";
-import { getCourses } from "../../services/Api";
+import { getAllCourses } from "../../services/Api";
+import Footer from "../../components/Footer";
 
 export default function DashBoard() {
   const [Courses, setCourses] = useState([]);
 
   useEffect(() => {
-    getCourses().then((res) => {
+    getAllCourses().then((res) => {
       setCourses(res.data);
     });
 
-    console.log(Courses);
+    
   }, []);
-
+console.log(Courses);
   return (
     <C.Container>
       <Header LoginSigninBtn>
@@ -36,7 +37,7 @@ export default function DashBoard() {
         cursosArray={Courses}
       />
 
-      <footer></footer>
+     <Footer />
     </C.Container>
   );
 }

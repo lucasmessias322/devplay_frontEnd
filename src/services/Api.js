@@ -21,9 +21,17 @@ export async function postRegister(data) {
     .catch((error) => console.log(error));
 }
 
-export async function getCourses() {
+export async function getAllCourses() {
   return await api
     .get("/api/courses")
     .then((response) => response)
     .catch((error) => console.log(error));
 }
+
+export async function getCourse(id) {
+  return await api
+    .get(`/api/courses/${id}`)
+    .then((response) => response)
+    .catch((error) => console.log(error));
+}
+

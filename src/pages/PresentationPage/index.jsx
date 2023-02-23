@@ -2,6 +2,7 @@ import React from "react";
 import * as C from "./style";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function PresentationPage() {
   return (
@@ -35,15 +36,7 @@ export default function PresentationPage() {
           </Link>
         </C.SectionTwoTexts>
       </C.SectionTwo>
-      <footer>
-        <h4>Devplay</h4>
-        <div className="removeContenttext">
-          <p>
-            Deseja retirar seu conteudo <br /> da plataforma?
-          </p>
-          <span>Click aqui</span>
-        </div>
-      </footer>
+      <Footer />
     </C.Container>
   );
 }

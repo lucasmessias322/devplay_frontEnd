@@ -56,7 +56,8 @@ export const Tabs = styled.div`
 
 export const CourseContent = styled.div`
   width: 100%;
-  padding: 20px 0px;
+  padding-top: 20px;
+  padding-bottom: 100px;
   color: white;
 `;
 

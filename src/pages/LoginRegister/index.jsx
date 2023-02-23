@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 import Input from "../../components/Input";
 import { toast, ToastContainer } from "react-toastify";
@@ -14,7 +14,7 @@ export default function LoginRegister() {
     if (params.login === "login") {
       setLogin(true);
     } else if (params.login === "register") {
-      setLogin (false);
+      setLogin(false);
     }
   }, []);
 
@@ -23,8 +23,10 @@ export default function LoginRegister() {
       <ToastContainer />
       <C.Header>
         <h2>
-          <span>{"<"}</span>Dev<span>Play</span>
-          <span>{" />"}</span>
+          <Link to="/">
+            <span>{"<"}</span>Dev<span>Play</span>
+            <span>{" />"}</span>
+          </Link>
         </h2>
       </C.Header>
       <C.FormContainer>
@@ -161,7 +163,7 @@ function RegisterComponent() {
       <Input
         User
         text="text"
-        placeholder="Seu nome"
+        placeholder="Seu nome e sobrenome"
         onChange={(e) => setValues({ ...values, name: e.target.value })}
         value={values.name}
         required
@@ -169,7 +171,7 @@ function RegisterComponent() {
       <Input
         User
         text="text"
-        placeholder="Nome de Usuario"
+        placeholder="Nome de Usuario exemplo: fulano642"
         onChange={(e) => setValues({ ...values, username: e.target.value })}
         value={values.username}
         required

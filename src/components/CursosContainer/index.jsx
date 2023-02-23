@@ -9,42 +9,6 @@ export default function CursosSliderContainer({
   coloredTitle,
   cursosArray = [],
 }) {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
-    initialSlide: 0,
-    centerMode: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
-          infinite: true,
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
   return (
     <Container>
       <h2>
@@ -54,9 +18,9 @@ export default function CursosSliderContainer({
       <SliderContain>
         {cursosArray?.map((item, i) => (
           <CursoItem key={i}>
-            <Link to={`/videopage/?datacurso=${JSON.stringify(item)}`}>
-              <img src={`${BaseUrl}/ftp/images/${item.image}`} />
-              <h4>{item.title}</h4>
+            <Link to={`/videopage/?cursoId=${item._id}`}>
+              <img src={item.playlistVideosData[0].thumbnail} />
+              <h4>{item.playlistName}</h4>
             </Link>
           </CursoItem>
         ))}
@@ -95,7 +59,7 @@ const Container = styled.div`
 `;
 
 const CursoItem = styled.div`
-  width: 200px;
+  width: 250px;
   padding: 5px;
 
   &:hover {
@@ -122,10 +86,15 @@ const CursoItem = styled.div`
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
-      width: 150px; /* some width */
+      width: 250px; /* some width */
       font-size: 16px;
       color: white;
-      padding: 20px 5px;
+      padding: 20px 10px;
+    }
+
+    span {
+      color: grey;
+      font-size: 16px;
     }
   }
 `;

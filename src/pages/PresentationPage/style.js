@@ -4,7 +4,7 @@ export const Container = styled.div`
   height: 100vh;
   background-color: #080216;
 
-  footer {
+  /* footer {
     background: linear-gradient(94.86deg, #2e224d -0.8%, #3e2f68 121.11%);
     height: 300px;
 
@@ -31,7 +31,7 @@ export const Container = styled.div`
         text-align: center;
       }
     }
-  }
+  } */
 `;
 
 export const Header = styled.header`

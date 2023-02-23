@@ -35,12 +35,12 @@ export const Container = styled.div`
     }
   }
 
-  footer {
+  /* footer {
     margin-top: 200px;
     background-color: #2e224d;
     padding: 40px;
     border-top: solid 5px #735db0;
-  }
+  } */
 
   @media (max-width: 500px) {
     .searchingContainer {

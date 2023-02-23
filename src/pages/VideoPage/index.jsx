@@ -1,23 +1,51 @@
 import { useEffect, useState } from "react";
 import * as C from "./style";
 import Header from "../../components/Header";
+import { getCourse } from "../../services/Api";
 import { useSearchParams } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 export default function VideoPage() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const dataCurso = JSON.parse(searchParams.get("datacurso"));
-  const [cursoClasses, setCursoClasses] = useState(dataCurso.classes);
+  const [curse, setCourse] = useState({
+    _id: "",
+    playlistName: "",
+    playlistVideosData: [],
+  });
+  const [cursoClasses, setCursoClasses] = useState([
+    {
+      publishedAt: "",
+      title: "",
+      link: "",
+      thumbnail: "",
+      playlistTitle: "",
+      playlistId: "",
+      videoOwnerChannelTitle: "",
+      description: "",
+    },
+  ]);
   const [currentClass, setCurrentClass] = useState(0);
 
-  useEffect(() => {}, []);
+  const cursoId = searchParams.get("cursoId");
+
+  useEffect(() => {
+    getCourse(cursoId).then((res) => {
+      setCourse(res.data);
+      setCursoClasses(res.data.playlistVideosData);
+    });
+  }, []);
 
   return (
     <C.Container>
-      <Header playerPage={true} borderBottom={false}></Header>
+      <Header
+        playerPage={true}
+        curseName={curse.playlistName}
+        borderBottom={false}
+      ></Header>
       <C.DashboardTabsContainer>
         <C.VideoContainer>
           <iframe
-            src={cursoClasses[currentClass].src}
+            src={cursoClasses[currentClass].link}
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
@@ -42,6 +70,7 @@ export default function VideoPage() {
           </C.UnorderedList>
         </C.CourseContent>
       </C.DashboardTabsContainer>
+      <Footer />
     </C.Container>
   );
 }
