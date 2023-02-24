@@ -35,3 +35,18 @@ export async function getCourse(id) {
     .catch((error) => console.log(error));
 }
 
+export async function postNewCurso(token, userData, userId, apiKey) {
+  const options = {
+    method: "POST",
+    url: `${BaseUrl}/api/${userId}/${apiKey}`,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    data: `${JSON.stringify(userData)}`,
+  };
+
+  return axios
+    .request(options)
+    
+}

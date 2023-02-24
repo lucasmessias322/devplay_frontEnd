@@ -12,7 +12,7 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   color: white;
-  padding: ${(props) => (props.playerPage ? "20px" : "10px 20px")};
+  padding: ${(props) => (props.playerPage ? "10px 20px" : "10px 20px")};
 
   div.logoContain {
     display: flex;
@@ -63,6 +63,7 @@ export const UserProfileDropDow = styled.div`
     border-radius: 100%;
     border: 4px solid #58468a;
     cursor: pointer;
+    
   }
 
   div.listMenu {
