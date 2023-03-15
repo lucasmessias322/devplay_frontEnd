@@ -21,9 +21,9 @@ export async function postRegister(data) {
     .catch((error) => console.log(error));
 }
 
-export async function getAllCourses() {
+export async function getAllCourses({ page, limit }) {
   return await api
-    .get("/api/courses")
+    .get(`/api/courses?page=${page}&limit=${limit}`)
     .then((response) => response)
     .catch((error) => console.log(error));
 }
@@ -46,7 +46,5 @@ export async function postNewCurso(token, userData, userId, apiKey) {
     data: `${JSON.stringify(userData)}`,
   };
 
-  return axios
-    .request(options)
-    
+  return axios.request(options);
 }

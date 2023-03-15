@@ -8,6 +8,9 @@ export default function CursosSliderContainer({
   title,
   coloredTitle,
   cursosArray = [],
+  handlePageChange,
+  totalPages,
+  currentPage,
 }) {
   return (
     <Container>
@@ -25,6 +28,20 @@ export default function CursosSliderContainer({
           </CursoItem>
         ))}
       </SliderContain>
+
+      {totalPages > 1 && (
+        <PagnationContainer>
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <PaginationItem
+              currentPage={i + 1 == currentPage && currentPage}
+              key={i}
+              onClick={() => handlePageChange(i + 1)}
+            >
+              {i + 1}
+            </PaginationItem>
+          ))}
+        </PagnationContainer>
+      )}
     </Container>
   );
 }
@@ -103,4 +120,16 @@ const SliderContain = styled.div`
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
+`;
+
+const PagnationContainer = styled.div`
+  width: 100%;
+  display: flex;
+  padding-top: 50px;
+`;
+
+const PaginationItem = styled.div`
+  padding: 5px 15px;
+  background-color: ${(props) => (props.currentPage ? "#4a367a" : " #2e224d")};
+  color: white;
 `;

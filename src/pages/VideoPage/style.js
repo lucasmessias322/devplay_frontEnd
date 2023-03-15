@@ -56,29 +56,41 @@ export const Tabs = styled.div`
 
 export const CourseContent = styled.div`
   width: 100%;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 100px;
   color: white;
 `;
 
 export const UnorderedList = styled.ul`
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   height: 400px;
   overflow: auto;
   display: flex;
   flex-direction: column;
-  border: 2px solid #956fff;
-  border-radius: 10px;
+  border: 1px solid #956fff;
+  border-radius: 5px;
   margin: 0 auto;
   background-color: #302451;
   padding: 10px;
+
+  ::-webkit-scrollbar-track {
+    background-color: #302451;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    background: #302451;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #956fff;
+  }
 `;
 
 export const LessonItem = styled.li`
   width: 100%;
   display: flex;
   align-items: center;
+  font-size: 16px;
   color: white;
   padding: 20px 10px;
   list-style: none;

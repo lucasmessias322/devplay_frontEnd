@@ -35,13 +35,6 @@ export const Container = styled.div`
     }
   }
 
-  /* footer {
-    margin-top: 200px;
-    background-color: #2e224d;
-    padding: 40px;
-    border-top: solid 5px #735db0;
-  } */
-
   @media (max-width: 500px) {
     .searchingContainer {
       display: flex;
@@ -77,3 +70,16 @@ export const Container = styled.div`
     }
   }
 `;
+
+// export const PagnationContainer = styled.div`
+//   width: 100%;
+//   display: flex;
+// `;
+
+// export const paginationItem = styled.div`
+//   padding: 5px 10px;
+//   background-color: ${(props) => (props.currentPage ? "blue" : "#b00216")};
+//   color: white;
+//   margin: 1px;
+//   border-radius: 5px;
+// `;

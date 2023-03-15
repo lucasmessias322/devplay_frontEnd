@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import { getCourse } from "../../services/Api";
 import { useSearchParams } from "react-router-dom";
 import Footer from "../../components/Footer";
+import YouTube from "react-youtube";
 
 export default function VideoPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -17,6 +18,7 @@ export default function VideoPage() {
       publishedAt: "",
       title: "",
       link: "",
+      videoId: "",
       thumbnail: "",
       playlistTitle: "",
       playlistId: "",
@@ -34,6 +36,10 @@ export default function VideoPage() {
       setCursoClasses(res.data.playlistVideosData);
     });
   }, []);
+
+
+
+
 
   return (
     <C.Container>
@@ -64,7 +70,7 @@ export default function VideoPage() {
                 key={i}
                 onClick={() => setCurrentClass(i)}
               >
-                <p>{item.title}</p>
+                <p>{i+1} - {item.title}</p>
               </C.LessonItem>
             ))}
           </C.UnorderedList>
