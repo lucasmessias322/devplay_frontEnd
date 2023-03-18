@@ -15,7 +15,7 @@ export default function CursosSliderContainer({
   return (
     <Container>
       <h2>
-        {title} <span>{coloredTitle}:</span>
+        {title} <span> {coloredTitle}:</span>
       </h2>
 
       <SliderContain>

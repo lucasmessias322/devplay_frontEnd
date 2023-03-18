@@ -21,16 +21,31 @@ export async function postRegister(data) {
     .catch((error) => console.log(error));
 }
 
-export async function getAllCourses({ page, limit }) {
+export async function getAllCourses({ page, limit, token }) {
   return await api
-    .get(`/api/courses?page=${page}&limit=${limit}`)
+    .get(`/api/curses?page=${page}&limit=${limit}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
     .then((response) => response)
     .catch((error) => console.log(error));
 }
 
 export async function getCourse(id) {
   return await api
-    .get(`/api/courses/${id}`)
+    .get(`/api/curses/${id}`)
+    .then((response) => response)
+    .catch((error) => console.log(error));
+}
+
+export async function searchCurso({ playlistname, page, limit, token }) {
+  return await api
+    .get(`/api/curses/search/${playlistname}?page=${page}&limit=${limit}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
     .then((response) => response)
     .catch((error) => console.log(error));
 }
